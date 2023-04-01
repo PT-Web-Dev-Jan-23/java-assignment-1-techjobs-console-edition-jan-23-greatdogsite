@@ -117,7 +117,7 @@ public class TechJobs {
         return choiceKeys[choiceIdx];
     }
 
-    // Print a list of jobs
+    // Print a list of jobs -done
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
         if (someJobs.size() > 0) {
             for (HashMap<String, String> hashMapRow : someJobs) { //iterate through ArrayList
