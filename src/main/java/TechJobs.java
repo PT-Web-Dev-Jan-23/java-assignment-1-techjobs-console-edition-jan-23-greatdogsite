@@ -10,12 +10,12 @@ public class TechJobs {
 
     static Scanner in = new Scanner(System.in);
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
         // Initialize our field map with key/name pairs
         HashMap<String, String> columnChoices = new HashMap<>();
-        columnChoices.put("core competency", "Skill");
-        columnChoices.put("employer", "Employer");
+        columnChoices.put("core competency", "Skill"); //values are the External representation to users
+        columnChoices.put("employer", "Employer"); //keys are Internal strings that control flow
         columnChoices.put("location", "Location");
         columnChoices.put("position type", "Position Type");
         columnChoices.put("all", "All");
@@ -112,14 +112,23 @@ public class TechJobs {
                 validChoice = true;
             }
 
-        } while(!validChoice);
+        } while (!validChoice);
 
         return choiceKeys[choiceIdx];
     }
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-
-        System.out.println("printJobs is not implemented yet");
+        if (someJobs.size() > 0) {
+            for (HashMap<String, String> hashMapRow : someJobs) { //iterate through ArrayList
+                System.out.println("\n*****");
+                for (Map.Entry<String, String> row : hashMapRow.entrySet()) { //iterate over keySet and display keys and values
+                    System.out.println(row.getKey() + ": " + row.getValue());
+                }
+                System.out.println("*****");
+            }
+        } else {
+            System.out.println("No Results");
+        }
     }
 }
